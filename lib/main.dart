@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:hive/hive.dart';
 
 import 'di/get_it.dart' as getIt;
-import 'movie_app.dart';
+import 'food_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,5 +16,5 @@ void main() async {
   Hive.init(appDocumentDir.path);
   //Hive.registerAdapter(MovieTableAdapter());
   unawaited(getIt.init());
-  runApp(MovieApp());
+  runApp(FoodApp());
 }

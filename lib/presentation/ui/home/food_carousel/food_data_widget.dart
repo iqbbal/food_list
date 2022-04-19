@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_list/domain/entities/food_entity.dart';
+import 'package:food_list/presentation/blocs/food_backdrop/food_backdrop_cubit.dart';
 
 import '../../../../domain/entities/movie_entity.dart';
-import '../../../blocs/movie_backdrop/movie_backdrop_cubit.dart';
 
-class MovieDataWidget extends StatelessWidget {
+class FoodDataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MovieBackdropCubit, FoodEntity?>(

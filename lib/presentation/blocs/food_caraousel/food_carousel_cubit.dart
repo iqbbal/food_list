@@ -2,13 +2,13 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_list/domain/entities/food_entity.dart';
+import 'package:food_list/presentation/blocs/food_backdrop/food_backdrop_cubit.dart';
 
 import '../../../domain/entities/app_error.dart';
 import '../../../domain/entities/movie_entity.dart';
 import '../../../domain/entities/no_params.dart';
 import '../../../domain/usecases/get_trending.dart';
 import '../loading/loading_cubit.dart';
-import '../movie_backdrop/movie_backdrop_cubit.dart';
 
 part 'movie_carousel_state.dart';
 

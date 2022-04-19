@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_list/domain/entities/food_entity.dart';
+import 'package:food_list/presentation/blocs/food_backdrop/food_backdrop_cubit.dart';
 
 import '../../../../common/constants/size_constants.dart';
 import '../../../../common/extensions/size_extensions.dart';
 import '../../../../common/screenutil/screenutil.dart';
 import '../../../../domain/entities/movie_entity.dart';
-import '../../../blocs/movie_backdrop/movie_backdrop_cubit.dart';
-import 'animated_movie_card_widget.dart';
+import 'animated_food_card_widget.dart';
 
-class MoviePageView extends StatefulWidget {
+class FoodPageView extends StatefulWidget {
   final List<FoodEntity> foods;
   final int initialPage;
 
-  const MoviePageView({
+  const FoodPageView({
     Key? key,
     required this.foods,
     this.initialPage = 0,
@@ -21,10 +21,10 @@ class MoviePageView extends StatefulWidget {
         super(key: key);
 
   @override
-  _MoviePageViewState createState() => _MoviePageViewState();
+  _FoodPageViewState createState() => _FoodPageViewState();
 }
 
-class _MoviePageViewState extends State<MoviePageView> {
+class _FoodPageViewState extends State<FoodPageView> {
   late PageController? _pageController;
 
   @override
@@ -52,7 +52,7 @@ class _MoviePageViewState extends State<MoviePageView> {
         controller: _pageController,
         itemBuilder: (context, index) {
           final FoodEntity movie = widget.foods[index];
-          return AnimatedMovieCardWidget(
+          return AnimatedFoodCardWidget(
             index: index,
             pageController: _pageController!,
             //movieId: movie.id,

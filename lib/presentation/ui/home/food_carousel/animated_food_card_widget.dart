@@ -5,13 +5,13 @@ import '../../../../common/extensions/size_extensions.dart';
 import '../../../../common/screenutil/screenutil.dart';
 import 'movie_card_widget.dart';
 
-class AnimatedMovieCardWidget extends StatelessWidget {
+class AnimatedFoodCardWidget extends StatelessWidget {
   final int index;
   //final int movieId;
   final String posterPath;
   final PageController pageController;
 
-  const AnimatedMovieCardWidget({
+  const AnimatedFoodCardWidget({
     Key? key,
     required this.index,
     //required this.movieId,

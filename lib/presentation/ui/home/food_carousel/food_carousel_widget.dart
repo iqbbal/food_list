@@ -4,15 +4,15 @@ import 'package:food_list/domain/entities/food_entity.dart';
 import '../../../../domain/entities/movie_entity.dart';
 import '../../../widgets/movie_app_bar.dart';
 import '../../../widgets/separator.dart';
-import 'movie_backdrop_widget.dart';
-import 'movie_data_widget.dart';
-import 'movie_page_view.dart';
+import 'food_backdrop_widget.dart';
+import 'food_data_widget.dart';
+import 'food_page_view.dart';
 
-class MovieCarouselWidget extends StatelessWidget {
+class FoodCarouselWidget extends StatelessWidget {
   final List<FoodEntity> movies;
   final int defaultIndex;
 
-  const MovieCarouselWidget({
+  const FoodCarouselWidget({
     Key? key,
     required this.movies,
     this.defaultIndex = 0,
@@ -23,7 +23,7 @@ class MovieCarouselWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        MovieBackdropWidget(),
+        FoodBackdropWidget(),
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -31,14 +31,14 @@ class MovieCarouselWidget extends StatelessWidget {
             MovieAppBar(),
             Expanded(
               flex: 3,
-              child: MoviePageView(
+              child: FoodPageView(
                 foods: movies,
                 initialPage: defaultIndex,
               ),
             ),
             Expanded(
               flex: 1,
-              child: MovieDataWidget(),
+              child: FoodDataWidget(),
             ),
           ],
         ),

@@ -4,16 +4,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_list/domain/entities/food_entity.dart';
+import 'package:food_list/presentation/blocs/food_backdrop/food_backdrop_cubit.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import '../../../../common/constants/size_constants.dart';
 import '../../../../common/extensions/size_extensions.dart';
 import '../../../../common/screenutil/screenutil.dart';
 import '../../../../data/core/api_constants.dart';
-import '../../../../domain/entities/movie_entity.dart';
-import '../../../blocs/movie_backdrop/movie_backdrop_cubit.dart';
 
-class MovieBackdropWidget extends StatelessWidget {
+class FoodBackdropWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -25,7 +24,6 @@ class MovieBackdropWidget extends StatelessWidget {
           widthFactor: 1,
           child: BlocBuilder<MovieBackdropCubit, FoodEntity?>(
             builder: (context, food) {
-              //return fadeNetworkImage(url: '${ApiConstants.BASE_IMAGE_URL}${movie?.backdropPath}', height: height);
               return CachedNetworkImage(
                   imageUrl: '${food?.image}',
                   fit: BoxFit.fitHeight,

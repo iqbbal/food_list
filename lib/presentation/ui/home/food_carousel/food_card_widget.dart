@@ -7,11 +7,11 @@ import '../../../../common/extensions/size_extensions.dart';
 import '../../../../data/core/api_constants.dart';
 // import '../../movie_detail/movie_detail_arguments.dart';
 
-class MovieCardWidget extends StatelessWidget {
+class FoodCardWidget extends StatelessWidget {
   //final int movieId;
   final String posterPath;
 
-  const MovieCardWidget({
+  const FoodCardWidget({
     Key? key,
     //required this.movieId,
     required this.posterPath,

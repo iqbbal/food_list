@@ -17,12 +17,12 @@ import 'presentation/widgets/fade_page_route_builder.dart';
 import 'routes.dart';
 import 'wiredash_app.dart';
 
-class MovieApp extends StatefulWidget {
+class FoodApp extends StatefulWidget {
   @override
-  _MovieAppState createState() => _MovieAppState();
+  _FoodAppState createState() => _FoodAppState();
 }
 
-class _MovieAppState extends State<MovieApp> {
+class _FoodAppState extends State<FoodApp> {
   final _navigatorKey = GlobalKey<NavigatorState>();
   late LanguageCubit _languageCubit;
   //late LoginCubit _loginBloc;

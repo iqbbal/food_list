@@ -1,25 +1,24 @@
 import 'package:food_list/data/data_source/language_local_data_source.dart';
-import 'package:food_list/data/data_source/movie_local_data_source.dart';
-import 'package:food_list/data/data_source/movie_remote_data_source.dart';
-import 'package:food_list/presentation/blocs/movie_caraousel/movie_carousel_cubit.dart';
+import 'package:food_list/data/data_source/food_local_data_source.dart';
+import 'package:food_list/data/data_source/food_remote_data_source.dart';
+import 'package:food_list/presentation/blocs/food_backdrop/food_backdrop_cubit.dart';
+import 'package:food_list/presentation/blocs/food_caraousel/food_carousel_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import '../domain/usecases/get_preferred_theme.dart';
 import '../domain/usecases/update_theme.dart';
-import '../presentation/blocs/movie_caraousel/movie_carousel_cubit.dart';
 import '../presentation/blocs/theme/theme_cubit.dart';
 
 import '../data/core/api_client.dart';
 import '../data/repositories/app_repository_impl.dart';
-import '../data/repositories/movie_repository_impl.dart';
+import '../data/repositories/food_repository_impl.dart';
 import '../domain/repositories/app_repository.dart';
-import '../domain/repositories/movie_repository.dart';
+import '../domain/repositories/food_repository.dart';
 import '../domain/usecases/get_preferred_language.dart';
 import '../domain/usecases/get_trending.dart';
 import '../domain/usecases/update_language.dart';
 import '../presentation/blocs/language/language_cubit.dart';
 import '../presentation/blocs/loading/loading_cubit.dart';
-import '../presentation/blocs/movie_backdrop/movie_backdrop_cubit.dart';
 
 final getItInstance = GetIt.I;
 

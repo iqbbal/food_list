@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_list/presentation/blocs/movie_caraousel/movie_carousel_cubit.dart';
+import 'package:food_list/presentation/blocs/food_backdrop/food_backdrop_cubit.dart';
+import 'package:food_list/presentation/blocs/food_caraousel/food_carousel_cubit.dart';
 
 import '../../../di/get_it.dart';
-import '../../blocs/movie_backdrop/movie_backdrop_cubit.dart';
 import '../../widgets/app_error_widget.dart';
-import 'movie_carousel/movie_carousel_widget.dart';
-import 'movie_tabbed/movie_tabbed_widget.dart';
+import 'food_carousel/food_carousel_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -63,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return Stack(
                 fit: StackFit.expand,
                 children: <Widget>[
-                  MovieCarouselWidget(
+                  FoodCarouselWidget(
                     movies: state.foods,
                     defaultIndex: state.defaultIndex,
                   )
