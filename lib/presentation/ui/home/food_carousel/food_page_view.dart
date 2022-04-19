@@ -62,7 +62,7 @@ class _FoodPageViewState extends State<FoodPageView> {
         pageSnapping: true,
         itemCount: widget.foods.length,
         onPageChanged: (index) {
-          BlocProvider.of<MovieBackdropCubit>(context)
+          BlocProvider.of<FoodBackdropCubit>(context)
               .backdropChanged(widget.foods[index]);
         },
       ),

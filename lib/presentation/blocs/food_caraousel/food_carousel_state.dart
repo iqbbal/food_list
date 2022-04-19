@@ -1,25 +1,25 @@
-part of 'movie_carousel_cubit.dart';
+part of 'food_carousel_cubit.dart';
 
-abstract class MovieCarouselState extends Equatable {
-  const MovieCarouselState();
+abstract class FoodCarouselState extends Equatable {
+  const FoodCarouselState();
 
   @override
   List<Object> get props => [];
 }
 
-class MovieCarouselInitial extends MovieCarouselState {}
+class FoodCarouselInitial extends FoodCarouselState {}
 
-class MovieCarouselError extends MovieCarouselState {
+class FoodCarouselError extends FoodCarouselState {
   final AppErrorType errorType;
 
-  const MovieCarouselError(this.errorType);
+  const FoodCarouselError(this.errorType);
 }
 
-class MovieCarouselLoaded extends MovieCarouselState {
+class FoodCarouselLoaded extends FoodCarouselState {
   final List<FoodEntity> foods;
   final int defaultIndex;
 
-  const MovieCarouselLoaded({
+  const FoodCarouselLoaded({
     required this.foods,
     this.defaultIndex = 0,
   }) : assert(defaultIndex >= 0, 'defaultIndex cannot be less than 0');

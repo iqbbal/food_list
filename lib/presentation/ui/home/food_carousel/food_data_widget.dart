@@ -8,7 +8,7 @@ import '../../../../domain/entities/movie_entity.dart';
 class FoodDataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MovieBackdropCubit, FoodEntity?>(
+    return BlocBuilder<FoodBackdropCubit, FoodEntity?>(
       builder: (context, movie) {
         return Text(
           movie?.name ?? '',

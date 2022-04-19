@@ -13,15 +13,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late MovieCarouselCubit movieCarouselCubit;
-  late MovieBackdropCubit movieBackdropCubit;
+  late FoodCarouselCubit movieCarouselCubit;
+  late FoodBackdropCubit movieBackdropCubit;
   //late MovieTabbedCubit movieTabbedCubit;
   //late SearchMovieCubit searchMovieCubit;
 
   @override
   void initState() {
     super.initState();
-    movieCarouselCubit = getItInstance<MovieCarouselCubit>();
+    movieCarouselCubit = getItInstance<FoodCarouselCubit>();
     movieBackdropCubit = movieCarouselCubit.movieBackdropCubit;
     //movieTabbedCubit = getItInstance<MovieTabbedCubit>();
     //searchMovieCubit = getItInstance<SearchMovieCubit>();
@@ -56,9 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
       child: Scaffold(
         //drawer: const NavigationDrawer(),
-        body: BlocBuilder<MovieCarouselCubit, MovieCarouselState>(
+        body: BlocBuilder<FoodCarouselCubit, FoodCarouselState>(
           builder: (context, state) {
-            if (state is MovieCarouselLoaded) {
+            if (state is FoodCarouselLoaded) {
               return Stack(
                 fit: StackFit.expand,
                 children: <Widget>[
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               );
-            } else if (state is MovieCarouselError) {
+            } else if (state is FoodCarouselError) {
               return AppErrorWidget(
                 onPressed: () => movieCarouselCubit.loadCarousel(),
                 errorType: state.errorType,

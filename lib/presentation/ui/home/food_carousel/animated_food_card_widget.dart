@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../common/constants/size_constants.dart';
 import '../../../../common/extensions/size_extensions.dart';
 import '../../../../common/screenutil/screenutil.dart';
-import 'movie_card_widget.dart';
+import 'food_card_widget.dart';
 
 class AnimatedFoodCardWidget extends StatelessWidget {
   final int index;
@@ -52,7 +52,7 @@ class AnimatedFoodCardWidget extends StatelessWidget {
           );
         }
       },
-      child: MovieCardWidget(
+      child: FoodCardWidget(
         //movieId: movieId,
         posterPath: posterPath,
       ),

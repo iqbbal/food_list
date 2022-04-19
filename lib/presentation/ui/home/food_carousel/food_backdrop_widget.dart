@@ -22,7 +22,7 @@ class FoodBackdropWidget extends StatelessWidget {
         FractionallySizedBox(
           heightFactor: 1,
           widthFactor: 1,
-          child: BlocBuilder<MovieBackdropCubit, FoodEntity?>(
+          child: BlocBuilder<FoodBackdropCubit, FoodEntity?>(
             builder: (context, food) {
               return CachedNetworkImage(
                   imageUrl: '${food?.image}',

@@ -1,19 +1,19 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:food_list/data/data_source/movie_local_data_source.dart';
-import 'package:food_list/data/data_source/movie_remote_data_source.dart';
+import 'package:food_list/data/data_source/food_local_data_source.dart';
+import 'package:food_list/data/data_source/food_remote_data_source.dart';
 import 'package:food_list/domain/entities/food_entity.dart';
-import 'package:food_list/domain/repositories/movie_repository.dart';
+import 'package:food_list/domain/repositories/food_repository.dart';
 
 import '../../domain/entities/app_error.dart';
 import '../models/movie_model.dart';
 
-class MovieRepositoryImpl extends MovieRepository {
-  final MovieRemoteDataSource remoteDataSource;
-  final MovieLocalDataSource localDataSource;
+class FoodRepositoryImpl extends FoodRepository {
+  final FoodRemoteDataSource remoteDataSource;
+  final FoodLocalDataSource localDataSource;
 
-  MovieRepositoryImpl(this.remoteDataSource, this.localDataSource);
+  FoodRepositoryImpl(this.remoteDataSource, this.localDataSource);
 
   @override
   Future<Either<AppError, List<MovieModel>>> getTrending() async {

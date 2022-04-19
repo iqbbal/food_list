@@ -7,15 +7,15 @@ import 'package:food_list/data/models/movies_result_model.dart';
 
 import '../core/api_client.dart';
 
-abstract class MovieRemoteDataSource {
+abstract class FoodRemoteDataSource {
   Future<List<MovieModel>> getTrending();
   Future<List<FoodModel>> getFoods();
 }
 
-class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
+class FoodRemoteDataSourceImpl extends FoodRemoteDataSource {
   final ApiClient _client;
 
-  MovieRemoteDataSourceImpl(this._client);
+  FoodRemoteDataSourceImpl(this._client);
 
   @override
   Future<List<MovieModel>> getTrending() async {

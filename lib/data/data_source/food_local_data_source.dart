@@ -1,14 +1,14 @@
 import 'package:food_list/data/tables/movie_table.dart';
 import 'package:hive/hive.dart';
 
-abstract class MovieLocalDataSource {
+abstract class FoodLocalDataSource {
   Future<void> saveMovie(MovieTable movieTable);
   Future<List<MovieTable>> getMovies();
   Future<void> deleteMovie(int movieId);
   Future<bool> checkIfMovieFavorite(int movieId);
 }
 
-class MovieLocalDataSourceImpl extends MovieLocalDataSource {
+class FoodLocalDataSourceImpl extends FoodLocalDataSource {
   @override
   Future<bool> checkIfMovieFavorite(int movieId) async {
     final movieBox = await Hive.openBox('movieBox');

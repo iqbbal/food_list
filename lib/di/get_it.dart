@@ -28,11 +28,11 @@ Future init() async {
   getItInstance
       .registerLazySingleton<ApiClient>(() => ApiClient(getItInstance()));
 
-  getItInstance.registerLazySingleton<MovieRemoteDataSource>(
-      () => MovieRemoteDataSourceImpl(getItInstance()));
+  getItInstance.registerLazySingleton<FoodRemoteDataSource>(
+      () => FoodRemoteDataSourceImpl(getItInstance()));
 
-  getItInstance.registerLazySingleton<MovieLocalDataSource>(
-      () => MovieLocalDataSourceImpl());
+  getItInstance.registerLazySingleton<FoodLocalDataSource>(
+      () => FoodLocalDataSourceImpl());
 
   getItInstance.registerLazySingleton<LanguageLocalDataSource>(
       () => LanguageLocalDataSourceImpl());
@@ -93,11 +93,10 @@ Future init() async {
   // getItInstance
   //     .registerLazySingleton<LogoutUser>(() => LogoutUser(getItInstance()));
 
-  getItInstance
-      .registerLazySingleton<MovieRepository>(() => MovieRepositoryImpl(
-            getItInstance(),
-            getItInstance(),
-          ));
+  getItInstance.registerLazySingleton<FoodRepository>(() => FoodRepositoryImpl(
+        getItInstance(),
+        getItInstance(),
+      ));
 
   getItInstance.registerLazySingleton<AppRepository>(() => AppRepositoryImpl(
         getItInstance(),
@@ -106,10 +105,10 @@ Future init() async {
   // getItInstance.registerLazySingleton<AuthenticationRepository>(
   //     () => AuthenticationRepositoryImpl(getItInstance(), getItInstance()));
 
-  getItInstance.registerFactory(() => MovieBackdropCubit());
+  getItInstance.registerFactory(() => FoodBackdropCubit());
 
   getItInstance.registerFactory(
-    () => MovieCarouselCubit(
+    () => FoodCarouselCubit(
       loadingCubit: getItInstance(),
       getTrending: getItInstance(),
       movieBackdropCubit: getItInstance(),

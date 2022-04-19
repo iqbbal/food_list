@@ -5,7 +5,7 @@ import '../entities/app_error.dart';
 import '../entities/movie_detail_entity.dart';
 import '../entities/movie_entity.dart';
 
-abstract class MovieRepository {
+abstract class FoodRepository {
   Future<Either<AppError, List<MovieEntity>>> getTrending();
   Future<Either<AppError, List<FoodEntity>>> getFoods();
 }

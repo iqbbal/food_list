@@ -10,27 +10,27 @@ import '../../../domain/entities/no_params.dart';
 import '../../../domain/usecases/get_trending.dart';
 import '../loading/loading_cubit.dart';
 
-part 'movie_carousel_state.dart';
+part 'food_carousel_state.dart';
 
-class MovieCarouselCubit extends Cubit<MovieCarouselState> {
+class FoodCarouselCubit extends Cubit<FoodCarouselState> {
   final GetTrending getTrending;
-  final MovieBackdropCubit movieBackdropCubit;
+  final FoodBackdropCubit movieBackdropCubit;
   final LoadingCubit loadingCubit;
 
-  MovieCarouselCubit({
+  FoodCarouselCubit({
     required this.getTrending,
     required this.movieBackdropCubit,
     required this.loadingCubit,
-  }) : super(MovieCarouselInitial());
+  }) : super(FoodCarouselInitial());
 
   void loadCarousel({int defaultIndex = 0}) async {
     loadingCubit.show();
     final moviesEither = await getTrending(NoParams());
     emit(moviesEither.fold(
-      (l) => MovieCarouselError(l.appErrorType),
+      (l) => FoodCarouselError(l.appErrorType),
       (foods) {
         movieBackdropCubit.backdropChanged(foods[defaultIndex]);
-        return MovieCarouselLoaded(
+        return FoodCarouselLoaded(
           foods: foods,
           defaultIndex: defaultIndex,
         );
